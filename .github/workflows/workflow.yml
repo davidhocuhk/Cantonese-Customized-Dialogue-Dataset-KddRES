@@ -1,0 +1,15 @@
+on: 
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send repo to Dataverse 
+        uses: IQSS/dataverse-uploader@v1.4
+        with:
+          DATAVERSE_TOKEN: 73edce9a-0292-48da-9cd5-8f19078a7cde
+          DATAVERSE_SERVER: https://researchdata.cuhk.edu.hk
+          DATAVERSE_DATASET_DOI: doi:10.48668/JNCJ8P
